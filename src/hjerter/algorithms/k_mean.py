@@ -31,7 +31,9 @@ def k_mean(data: np.ndarray, k: int, eps: float) -> np.ndarray:
         # TODO: remove `cast`, now np.argmin can return integer
         clusters = cast(np.ndarray, np.argmin(distances, axis=-1))  # (N, )
         one_hot_clusters = one_hot(clusters, num_classes=k)  # (N, k)
-        new_centroids = (one_hot_clusters.T @ data) / np.expand_dims(
+        new_centroids = (
+            one_hot_clusters.T @ data
+        ) / np.expand_dims(  # TODO: division by zero problem
             one_hot_clusters.sum(axis=0), axis=1
         )  # (k, D)
 
@@ -42,8 +44,8 @@ def k_mean(data: np.ndarray, k: int, eps: float) -> np.ndarray:
 
 
 if __name__ == "__main__":
-    N = 100
+    N = 10000
     D = 202
     data = np.random.uniform(size=(N, D))
-    clusters = k_mean(data=data, k=7, eps=0.01)
+    clusters = k_mean(data=data, k=100, eps=0.01)
     print(clusters)
