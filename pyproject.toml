@@ -7,6 +7,7 @@ authors = ["Ching-yu Lin <cyl@chingyulin.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 numpy = "^1.22.3"
+matplotlib = "^3.5.1"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
