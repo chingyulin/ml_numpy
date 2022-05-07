@@ -22,18 +22,18 @@ repos:
     rev: 3.9.2
     hooks:
     -   id: flake8
--   repo: local
-    hooks:
-      - id: mypy
-        name: mypy
-        language: system
-        pass_filenames: false
-        entry: poetry run mypy .
-        args:
-          - --install-types
-          - --non-interactive
-          - --strict
-          - --show-error-codes
+# -   repo: local
+#     hooks:
+#       - id: mypy
+#         name: mypy
+#         language: system
+#         pass_filenames: false
+#         entry: poetry run mypy .
+#         args:
+#           - --install-types
+#           - --non-interactive
+#           - --strict
+#           - --show-error-codes
 -   repo:  https://github.com/jumanjihouse/pre-commit-hooks
     rev: 2.1.5
     hooks:
